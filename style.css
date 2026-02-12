@@ -43,10 +43,10 @@ body {
 }
 
 .logo {
-  text-decoration: none;   /* no underline */
-  color: #ffffff;             /* black or any color you prefer */
-  font-weight: bold;       /* make it stand out */
-  font-size: 1.5rem;       /* adjust size */
+  text-decoration: none;  
+  color: var(--text);             
+  font-weight: bold;       
+  font-size: 1.5rem;       
 }
 
 .nav {

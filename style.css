@@ -117,20 +117,25 @@ body {
   background: var(--section-bg);
 }
 
-.skills-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
-  margin-top: 40px;
+.slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  cursor: grab;
 }
 
-.skill-category ul {
-  list-style: none;
-  margin-top: 15px;
+.slide-track {
+  display: flex;
+  gap: 40px;
+  will-change: transform;
 }
 
-.skill-category li {
-  margin: 8px 0;
+.slide-track img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  user-select: none;
+  pointer-events: none;
 }
 
 .projects-grid {
@@ -193,7 +198,7 @@ footer {
     right: 0;
     background: var(--bg);
     flex-direction: column;
-    width: 200px;
+    width: 140px;
     padding: 20px;
     display: none;
   }

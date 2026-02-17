@@ -84,10 +84,11 @@ body {
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  gap : 20px;
   padding-top: 80px;
 }
 
-.hero span {
+.hero h1 span  {
   color: var(--accent);
 }
 
@@ -210,4 +211,28 @@ footer {
   .menu-toggle {
     display: block;
   }
+}
+
+.static-text {
+  color: var(--text);   /* theme text color */
+  margin-right: 6px;
+}
+
+.typing {
+  display: inline-block;
+  min-width: 130px;
+  white-space: nowrap;
+  color: var(--text);   /* blue typing text */
+}
+
+/* Blinking Cursor */
+.typing::after {
+  content: "|";
+  margin-left: 4px;
+  color: rgb(66, 61, 79);
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
 }

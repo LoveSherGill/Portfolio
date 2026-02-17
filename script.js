@@ -87,3 +87,30 @@ document.querySelectorAll(".slider").forEach(slider => {
 
 });
 
+const roles = ["Web Developer", "Graphic Designer", "Programmer"];
+let roleIndex = 0;
+let charIndex = 0;
+let currentRole = "";
+let isDeleting = false;
+const typingElement = document.getElementById("typing");
+
+function typeEffect() {
+  if (isDeleting) {
+    currentRole = roles[roleIndex].substring(0, charIndex--);
+  } else {
+    currentRole = roles[roleIndex].substring(0, charIndex++);
+  }
+
+  typingElement.textContent = currentRole;
+
+  if (!isDeleting && charIndex === roles[roleIndex].length) {
+    setTimeout(() => isDeleting = true, 1000); // pause before deleting
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    roleIndex = (roleIndex + 1) % roles.length; // move to next role
+  }
+
+  setTimeout(typeEffect, isDeleting ? 100 : 150); // speed control
+}
+
+typeEffect();
